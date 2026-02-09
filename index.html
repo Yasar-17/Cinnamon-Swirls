@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cinnamon Swirls | Cakes &amp; Desserts in Ambur</title>
+    <meta
+      name="description"
+      content="Cinnamon Swirls creates handcrafted cakes, brownies, scones, and custom desserts in Ambur. Order easily via WhatsApp and enjoy a swirl of flavours in every treat."
+    />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cinnamon Swirls | Cakes &amp; Desserts in Ambur" />
+    <meta
+      property="og:description"
+      content="Handcrafted cakes and desserts in Ambur. Beautiful, custom-made treats for every celebration."
+    />
+    <meta property="og:image" content="images/hero-cake.jpg" />
+    <meta property="og:url" content="https://example.com" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              /* Adjusted to better match printed menu colours */
+              cinnamon: '#C96A2C',
+              cinnamonDark: '#8A4420',
+              caramel: '#E1A452',
+              cream: '#FBE1AF',
+              creamSoft: '#F6CF8E',
+              accentPink: '#F6B7B2',
+              accentPinkLight: '#FBD0CB',
+              textBrown: '#5E3A1A',
+            },
+            fontFamily: {
+              heading: ['"Playfair Display"', 'serif'],
+              body: ['Poppins', 'system-ui', 'sans-serif'],
+            },
+            boxShadow: {
+              soft: '0 10px 30px rgba(0, 0, 0, 0.08)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body class="bg-cream text-textBrown font-body antialiased">
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/916381091583?text=Hi%21%20I%27d%20like%20to%20order%20from%20Cinnamon%20Swirls"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-40 inline-flex items-center justify-center rounded-full bg-cinnamon text-white shadow-soft px-5 py-3 md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+      aria-label="Order on WhatsApp"
+    >
+      <span class="mr-2 text-lg">WhatsApp</span>
+      <span class="text-xl">🧁</span>
+    </a>
+
+    <!-- Header / Navigation -->
+    <header
+      class="sticky top-0 z-30 border-b border-caramel/10 bg-cream/90 backdrop-blur"
+      aria-label="Main navigation"
+    >
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 lg:px-8">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3">
+          <div class="h-10 w-10 overflow-hidden rounded-full bg-caramel shadow-soft">
+            <img
+              src="Images/Logo.jpg"
+              alt="Cinnamon Swirls logo"
+              class="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex flex-col">
+            <span class="font-heading text-lg font-semibold tracking-wide">Cinnamon Swirls</span>
+            <span class="text-xs text-cinnamonDark">Ambur &amp; nearby areas</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden items-center gap-8 text-sm md:flex" aria-label="Primary">
+          <a href="#home" class="transition-colors hover:text-cinnamonDark">Home</a>
+          <a href="#about" class="transition-colors hover:text-cinnamonDark">About</a>
+          <a href="menu.html" " class="transition-colors hover:text-cinnamonDark">Menu</a>
+          <a href="#gallery" class="transition-colors hover:text-cinnamonDark">Gallery</a>
+          <a href="#contact" class="transition-colors hover:text-cinnamonDark">Contact</a>
+
+          <a
+            href="https://wa.me/916381091583?text=Hi%21%20I%27d%20like%20to%20order%20from%20Cinnamon%20Swirls"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center rounded-full bg-accentPink px-4 py-2 text-sm font-medium text-textBrown shadow-soft transition hover:bg-accentPinkLight focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+          >
+            Order on WhatsApp
+          </a>
+
+          <a
+            href="tel:+916381091583"
+            class="hidden items-center text-xs text-cinnamonDark md:inline-flex"
+          >
+            Call: +91 63810 91583
+          </a>
+        </nav>
+
+        <!-- Mobile Nav Toggle -->
+        <button
+          id="nav-toggle"
+          class="inline-flex items-center justify-center rounded-full border border-caramel/30 bg-cream px-3 py-2 text-sm text-textBrown shadow-sm transition hover:bg-creamSoft focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark md:hidden"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <svg
+            id="nav-icon-open"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+          <svg
+            id="nav-icon-close"
+            xmlns="http://www.w3.org/2000/svg"
+            class="hidden h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <nav
+        id="mobile-nav"
+        class="hidden border-t border-caramel/10 bg-creamSoft md:hidden"
+        aria-label="Mobile primary"
+      >
+        <div class="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 text-sm">
+          <a href="#home" class="rounded-md px-2 py-2 transition hover:bg-cream">Home</a>
+          <a href="#about" class="rounded-md px-2 py-2 transition hover:bg-cream">About</a>
+          <a href="#menu" class="rounded-md px-2 py-2 transition hover:bg-cream">Menu</a>
+          <a href="#gallery" class="rounded-md px-2 py-2 transition hover:bg-cream">Gallery</a>
+          <a href="#contact" class="rounded-md px-2 py-2 transition hover:bg-cream">Contact</a>
+          <a
+            href="https://wa.me/916381091583?text=Hi%21%20I%27d%20like%20to%20order%20from%20Cinnamon%20Swirls"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-1 inline-flex items-center justify-center rounded-full bg-accentPink px-4 py-2 text-sm font-medium text-textBrown shadow-soft transition hover:bg-accentPinkLight"
+          >
+            Order on WhatsApp
+          </a>
+          <a href="tel:+916381091583" class="mt-1 text-xs text-cinnamonDark">
+            Call: +91 63810 91583
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="home">
+      <!-- Hero Section -->
+      <section
+        class="bg-creamSoft"
+        aria-labelledby="hero-title"
+      >
+        <div
+          class="mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 pt-24 pb-16 md:flex-row md:px-6 lg:px-8 lg:pt-28 lg:pb-20"
+        >
+          <!-- Hero Text -->
+          <div class="w-full md:w-1/2">
+            <p class="mb-3 inline-flex items-center rounded-full bg-cream px-3 py-1 text-xs font-medium text-cinnamonDark shadow-soft">
+              Handcrafted desserts in Ambur
+            </p>
+            <h1
+              id="hero-title"
+              class="mb-4 font-heading text-3xl font-semibold leading-tight tracking-tight text-textBrown sm:text-4xl lg:text-5xl"
+            >
+              A Swirl of Flavours in Every Treat
+            </h1>
+            <p class="mb-6 max-w-lg text-sm text-textBrown/80 sm:text-base">
+              Welcome to Cinnamon Swirls, where every cake, brownie, and scone is baked with love,
+              premium ingredients, and a sprinkle of sweetness for your special moments.
+            </p>
+
+            <div class="mb-6 flex flex-wrap items-center gap-3">
+              <a
+                href="https://wa.me/916381091583?text=Hi%21%20I%27d%20like%20to%20order%20from%20Cinnamon%20Swirls"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center rounded-full bg-cinnamon px-6 py-3 text-sm font-medium text-white shadow-soft transition hover:bg-cinnamonDark focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+              >
+                Order Now on WhatsApp
+              </a>
+              <a
+                href="menu.html"
+                class="inline-flex items-center rounded-full border border-caramel/40 bg-cream px-6 py-3 text-sm font-medium text-textBrown shadow-sm transition hover:bg-creamSoft focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+              >
+                Explore Menu
+              </a>
+            </div>
+
+            <div class="flex flex-wrap gap-6 text-xs text-textBrown/80 sm:text-sm">
+              <div>
+                <p class="font-semibold text-textBrown">871+ Happy Customers</p>
+                <p>Spreading sweetness across Ambur</p>
+              </div>
+              <div>
+                <p class="font-semibold text-textBrown">110+ Creations</p>
+                <p>Custom cakes &amp; desserts</p>
+              </div>
+              <div>
+                <p class="font-semibold text-textBrown">Fresh &amp; Handmade</p>
+                <p>Baked to order, always</p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="mt-8 inline-flex items-center text-xs text-textBrown/70"
+              onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })"
+            >
+              <span class="mr-2">Scroll to explore</span>
+              <span aria-hidden="true">⬇️</span>
+            </button>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="w-full md:w-1/2">
+            <div class="relative overflow-hidden rounded-3xl bg-cream shadow-soft">
+              <img
+                src="Images/Logo.jpg"
+                alt="Decorated cake from Cinnamon Swirls"
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"
+                aria-hidden="true"
+              ></div>
+              <div class="absolute bottom-4 left-4 rounded-full bg-cream/90 px-4 py-2 text-xs text-textBrown shadow-soft">
+                Custom-made for birthdays, weddings &amp; every sweet moment ✨
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="bg-cream py-14 sm:py-16" aria-labelledby="about-title">
+        <div class="mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
+          <div class="grid gap-10 md:grid-cols-[1.5fr_1fr] md:items-center">
+            <div>
+              <h2
+                id="about-title"
+                class="mb-4 font-heading text-2xl font-semibold tracking-tight text-textBrown sm:text-3xl"
+              >
+                Crafted with love in Ambur
+              </h2>
+              <p class="mb-3 text-sm text-textBrown/85 sm:text-base">
+                Cinnamon Swirls is a home-grown dessert studio dedicated to creating cakes, brownies,
+                scones, and bespoke treats that taste as good as they look.
+              </p>
+              <p class="text-sm text-textBrown/85 sm:text-base">
+                Every order is baked fresh, customised to your taste, and finished with an eye for
+                detail &mdash; perfect for birthdays, celebrations, gifting, or simply treating
+                yourself.
+              </p>
+            </div>
+
+            <div class="grid gap-4 text-sm sm:grid-cols-3 sm:text-center">
+              <div class="rounded-2xl bg-creamSoft px-4 py-4 shadow-soft">
+                <p class="mb-1 text-xs font-medium uppercase tracking-wide text-cinnamonDark">
+                  Happy Customers
+                </p>
+                <p class="text-xl font-semibold text-textBrown">871+</p>
+              </div>
+              <div class="rounded-2xl bg-creamSoft px-4 py-4 shadow-soft">
+                <p class="mb-1 text-xs font-medium uppercase tracking-wide text-cinnamonDark">
+                  Creations
+                </p>
+                <p class="text-xl font-semibold text-textBrown">110+</p>
+              </div>
+              <div class="rounded-2xl bg-creamSoft px-4 py-4 shadow-soft">
+                <p class="mb-1 text-xs font-medium uppercase tracking-wide text-cinnamonDark">
+                  Fresh Daily
+                </p>
+                <p class="text-xl font-semibold text-textBrown">Hand-Made</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Menu / Product Showcase -->
+      <section id="menu" class="bg-creamSoft py-14 sm:py-16" aria-labelledby="menu-title">
+        <div class="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+          <div class="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <h2
+                id="menu-title"
+                class="mb-3 font-heading text-2xl font-semibold tracking-tight text-textBrown sm:text-3xl"
+              >
+                Our Sweet Creations
+              </h2>
+              <p class="max-w-xl text-sm text-textBrown/80 sm:text-base">
+                Inspired by our Instagram favourites, explore a curated selection of cakes, brownies,
+                scones, and custom treats. For detailed flavours and pricing, message us on WhatsApp.
+              </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-3">
+              <a
+                href="menu.html"
+                class="inline-flex items-center rounded-full bg-cinnamon px-5 py-2 text-xs font-medium text-white shadow-soft transition hover:bg-cinnamonDark focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+              >
+                Explore Full Menu
+              </a>
+              <a
+                href="https://www.instagram.com/cinnamonswirls.ambur"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-xs font-medium text-cinnamonDark underline-offset-4 hover:underline"
+              >
+                View more on Instagram
+              </a>
+            </div>
+          </div>
+
+          <!-- Category Tags -->
+          <div class="mb-6 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-cream px-3 py-1 text-textBrown">Cakes 🎂</span>
+            <span class="rounded-full bg-cream px-3 py-1 text-textBrown">Brownies 🍫</span>
+            <span class="rounded-full bg-cream px-3 py-1 text-textBrown">Scones 🧈</span>
+            <span class="rounded-full bg-cream px-3 py-1 text-textBrown">Packaging 📦</span>
+            <span class="rounded-full bg-cream px-3 py-1 text-textBrown">Custom Orders 💝</span>
+          </div>
+
+          <!-- Product Grid -->
+          <div
+            class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            aria-label="Featured menu items"
+          >
+            <!-- Card 1 -->
+            <article class="group flex flex-col overflow-hidden rounded-3xl bg-cream shadow-soft">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/Cool Cake.jpg"
+                  alt="Custom celebration cake decorated with swirls and toppings"
+                  class="h-52 w-full object-cover transition duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <span
+                  class="absolute left-3 top-3 rounded-full bg-cream/90 px-3 py-1 text-xs font-medium text-textBrown shadow-sm"
+                  >Cakes 🎂</span
+                >
+              </div>
+              <div class="flex flex-1 flex-col px-4 pb-4 pt-3">
+                <h3 class="mb-1 font-heading text-base font-semibold text-textBrown">
+                  Custom Celebration Cakes
+                </h3>
+                <p class="mb-2 text-xs text-textBrown/80">
+                  Tailor-made cakes for birthdays, anniversaries, and all your sweetest milestones.
+                </p>
+                <p class="mt-auto text-xs font-medium text-cinnamonDark">
+                  Contact for flavours &amp; pricing
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="group flex flex-col overflow-hidden rounded-3xl bg-cream shadow-soft">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/Celebration Cake (1).jpg"
+                  alt="Birthday cake with frosting and sprinkles"
+                  class="h-52 w-full object-cover transition duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <span
+                  class="absolute left-3 top-3 rounded-full bg-cream/90 px-3 py-1 text-xs font-medium text-textBrown shadow-sm"
+                  >Cakes 🎂</span
+                >
+              </div>
+              <div class="flex flex-1 flex-col px-4 pb-4 pt-3">
+                <h3 class="mb-1 font-heading text-base font-semibold text-textBrown">
+                  Birthday &amp; Theme Cakes
+                </h3>
+                <p class="mb-2 text-xs text-textBrown/80">
+                  From simple elegance to fun themes, we bring your ideas to life.
+                </p>
+                <p class="mt-auto text-xs font-medium text-cinnamonDark">
+                  From birthday classics to statement centrepieces
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="group flex flex-col overflow-hidden rounded-3xl bg-cream shadow-soft">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/Brownies.jpg"
+                  alt="Tray of rich, fudgy brownies"
+                  class="h-52 w-full object-cover transition duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <span
+                  class="absolute left-3 top-3 rounded-full bg-cream/90 px-3 py-1 text-xs font-medium text-textBrown shadow-sm"
+                  >Brownies 🍫</span
+                >
+              </div>
+              <div class="flex flex-1 flex-col px-4 pb-4 pt-3">
+                <h3 class="mb-1 font-heading text-base font-semibold text-textBrown">
+                  Classic &amp; Loaded Brownies
+                </h3>
+                <p class="mb-2 text-xs text-textBrown/80">
+                  Fudgy, chocolatey brownies with seasonal toppings and special flavours.
+                </p>
+                <p class="mt-auto text-xs font-medium text-cinnamonDark">
+                  Boxes perfect for gifting &amp; sharing
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="group flex flex-col overflow-hidden rounded-3xl bg-cream shadow-soft">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/CupCakes.jpg"
+                  alt="Freshly baked cupcakes arranged on a tray"
+                  class="h-52 w-full object-cover transition duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <span
+                  class="absolute left-3 top-3 rounded-full bg-cream/90 px-3 py-1 text-xs font-medium text-textBrown shadow-sm"
+                  >Scones 🧈</span
+                >
+              </div>
+              <div class="flex flex-1 flex-col px-4 pb-4 pt-3">
+                <h3 class="mb-1 font-heading text-base font-semibold text-textBrown">
+                  Buttery Scones
+                </h3>
+                <p class="mb-2 text-xs text-textBrown/80">
+                  Light, flaky scones &mdash; perfect with tea, coffee, or as a brunch treat.
+                </p>
+                <p class="mt-auto text-xs font-medium text-cinnamonDark">
+                  Rotating flavours &amp; seasonal specials
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="group flex flex-col overflow-hidden rounded-3xl bg-cream shadow-soft">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/Packed.jpg"
+                  alt="Gift-ready dessert packaging with ribbons and boxes"
+                  class="h-52 w-full object-cover transition duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <span
+                  class="absolute left-3 top-3 rounded-full bg-cream/90 px-3 py-1 text-xs font-medium text-textBrown shadow-sm"
+                  >Packaging 📦</span
+                >
+              </div>
+              <div class="flex flex-1 flex-col px-4 pb-4 pt-3">
+                <h3 class="mb-1 font-heading text-base font-semibold text-textBrown">
+                  Gift-Ready Packaging
+                </h3>
+                <p class="mb-2 text-xs text-textBrown/80">
+                  Beautiful boxes and finishing touches that make every order feel special.
+                </p>
+                <p class="mt-auto text-xs font-medium text-cinnamonDark">
+                  Perfect for celebrations, parties &amp; corporate gifting
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="group flex flex-col overflow-hidden rounded-3xl bg-cream shadow-soft">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/Ready to go.jpg"
+                  alt="Assorted custom dessert box with different treats ready to go"
+                  class="h-52 w-full object-cover transition duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <span
+                  class="absolute left-3 top-3 rounded-full bg-cream/90 px-3 py-1 text-xs font-medium text-textBrown shadow-sm"
+                  >Custom Orders 💝</span
+                >
+              </div>
+              <div class="flex flex-1 flex-col px-4 pb-4 pt-3">
+                <h3 class="mb-1 font-heading text-base font-semibold text-textBrown">
+                  Custom Dessert Boxes
+                </h3>
+                <p class="mb-2 text-xs text-textBrown/80">
+                  Mix-and-match boxes curated to your preferences and occasion.
+                </p>
+                <p class="mt-auto text-xs font-medium text-cinnamonDark">
+                  Share your ideas on WhatsApp for a custom quote
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-textBrown/80">
+            <p>Prices vary by size, design, and customisation. We&apos;ll confirm all details on WhatsApp.</p>
+            <a
+              href="https://wa.me/916381091583?text=Hi%21%20I%27d%20like%20to%20see%20the%20full%20menu%20for%20Cinnamon%20Swirls"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center rounded-full border border-caramel/50 bg-cream px-4 py-2 text-xs font-medium text-textBrown shadow-sm transition hover:bg-creamSoft"
+            >
+              View Full Menu on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
+<!-- Gallery Section -->
+      <section id="gallery" class="bg-cream py-14 sm:py-16" aria-labelledby="gallery-title">
+        <div class="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+          <div class="mb-6 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end">
+            <div>
+              <h2
+                id="gallery-title"
+                class="mb-2 font-heading text-2xl font-semibold tracking-tight text-textBrown sm:text-3xl"
+              >
+                Sweet Moments
+              </h2>
+              <p class="max-w-xl text-sm text-textBrown/80 sm:text-base">
+                A peek into our favourite bakes, packaging details, and customer orders &mdash;
+                just like you see on Instagram.
+              </p>
+            </div>
+            
+              href="https://www.instagram.com/cinnamonswirls.ambur"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-xs font-medium text-cinnamonDark underline-offset-4 hover:underline"
+            >
+              See more on Instagram
+            </a>
+          </div>
+
+          <div
+            class="grid gap-4 sm:grid-cols-2 md:grid-cols-4"
+            aria-label="Gallery of cakes and desserts"
+          >
+            <!-- 4 images -->
+            <button
+              class="group overflow-hidden rounded-2xl bg-creamSoft shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+              data-lightbox="image"
+              data-full="Images/Cake.jpg"
+            >
+              <img
+                src="Images/Cake.jpg"
+                alt="Decorated cake from Cinnamon Swirls"
+                class="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </button>
+
+            <button
+              class="group overflow-hidden rounded-2xl bg-creamSoft shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+              data-lightbox="image"
+              data-full="Images/Cool Cake.jpg"
+            >
+              <img
+                src="Images/Sweet Memeories.jpeg"
+                alt="Chocolate cake with decorative toppings"
+                class="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </button>
+
+            <button
+              class="group overflow-hidden rounded-2xl bg-creamSoft shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+              data-lightbox="image"
+              data-full="Images/CupCakes.jpg"
+            >
+              <img
+                src="Images/Sweet Memories 2.jpeg"
+                alt="Assorted cupcakes from Cinnamon Swirls"
+                class="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </button>
+
+            <button
+              class="group overflow-hidden rounded-2xl bg-creamSoft shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+              data-lightbox="image"
+              data-full="Images/Pink CupCakes.jpg"
+            >
+              <img
+                src="Images/Pink CupCakes.jpg"
+                alt="Pink frosted cupcakes arranged for gifting"
+                class="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </button>
+          </div>
+        </div>
+
+        <!-- Lightbox overlay -->
+        <div
+          id="lightbox"
+          class="fixed inset-0 z-40 hidden items-center justify-center bg-black/70 p-4"
+          aria-modal="true"
+          role="dialog"
+          aria-label="Expanded dessert image"
+        >
+          <button
+            id="lightbox-close"
+            class="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-textBrown shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+          >
+            Close
+          </button>
+          <img
+            id="lightbox-image"
+            src=""
+            alt="Enlarged dessert from Cinnamon Swirls"
+            class="max-h-[80vh] max-w-full rounded-3xl shadow-soft"
+          />
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section
+        id="testimonials"
+        class="bg-creamSoft py-14 sm:py-16"
+        aria-labelledby="testimonials-title"
+      >
+        <div class="mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
+          <div class="mb-6">
+            <h2
+              id="testimonials-title"
+              class="mb-2 font-heading text-2xl font-semibold tracking-tight text-textBrown sm:text-3xl"
+            >
+              What Our Customers Say
+            </h2>
+            <p class="max-w-xl text-sm text-textBrown/80 sm:text-base">
+              Loved by dessert lovers across Ambur. These kind words are inspired by real Instagram
+              reviews.
+            </p>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Testimonial 1 -->
+            <article class="flex h-full flex-col rounded-3xl bg-cream p-5 shadow-soft">
+              <div class="mb-2 flex items-center gap-1 text-xs text-cinnamonDark" aria-label="5 star rating">
+                <span>★★★★★</span>
+              </div>
+              <p class="mb-4 text-sm text-textBrown/90">
+                &ldquo;The cake was absolutely perfect &mdash; beautiful, moist, and exactly how I
+                imagined it. Everyone at the party kept asking where it was from!&rdquo;
+              </p>
+              <p class="mt-auto text-xs font-medium text-textBrown">Happy Customer</p>
+            </article>
+
+            <!-- Testimonial 2 -->
+            <article class="flex h-full flex-col rounded-3xl bg-cream p-5 shadow-soft">
+              <div class="mb-2 flex items-center gap-1 text-xs text-cinnamonDark" aria-label="5 star rating">
+                <span>★★★★★</span>
+              </div>
+              <p class="mb-4 text-sm text-textBrown/90">
+                &ldquo;Brownies were rich, fudgy and not too sweet &mdash; just perfect. The
+                packaging made it feel so special to gift as well.&rdquo;
+              </p>
+              <p class="mt-auto text-xs font-medium text-textBrown">Regular Brownie Lover</p>
+            </article>
+
+            <!-- Testimonial 3 -->
+            <article class="flex h-full flex-col rounded-3xl bg-cream p-5 shadow-soft">
+              <div class="mb-2 flex items-center gap-1 text-xs text-cinnamonDark" aria-label="5 star rating">
+                <span>★★★★★</span>
+              </div>
+              <p class="mb-4 text-sm text-textBrown/90">
+                &ldquo;From ordering on WhatsApp to pickup, everything was smooth. The customised
+                dessert box was a huge hit with my family.&rdquo;
+              </p>
+              <p class="mt-auto text-xs font-medium text-textBrown">Cinnamon Swirls Fan</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How to Order Section -->
+      <section
+        id="how-to-order"
+        class="bg-cream py-14 sm:py-16"
+        aria-labelledby="order-title"
+      >
+        <div class="mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
+          <div class="mb-6 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end">
+            <div>
+              <h2
+                id="order-title"
+                class="mb-2 font-heading text-2xl font-semibold tracking-tight text-textBrown sm:text-3xl"
+              >
+                Easy Ordering Process
+              </h2>
+              <p class="max-w-xl text-sm text-textBrown/80 sm:text-base">
+                Ordering from Cinnamon Swirls is as simple as sending a message. Here&apos;s how it works:
+              </p>
+            </div>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-3">
+            <!-- Step 1 -->
+            <div class="flex flex-col rounded-3xl bg-creamSoft p-5 text-sm shadow-soft">
+              <div
+                class="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-accentPink text-xs font-medium text-textBrown"
+              >
+                1
+              </div>
+              <h3 class="mb-1 font-heading text-base font-semibold text-textBrown">Browse</h3>
+              <p class="text-textBrown/85">
+                Explore our menu and Instagram feed to choose your favourite cakes and desserts.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col rounded-3xl bg-creamSoft p-5 text-sm shadow-soft">
+              <div
+                class="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-accentPink text-xs font-medium text-textBrown"
+              >
+                2
+              </div>
+              <h3 class="mb-1 font-heading text-base font-semibold text-textBrown">Contact</h3>
+              <p class="text-textBrown/85">
+                Send us a WhatsApp message with your date, quantity, flavours, and any custom ideas.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col rounded-3xl bg-creamSoft p-5 text-sm shadow-soft">
+              <div
+                class="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-accentPink text-xs font-medium text-textBrown"
+              >
+                3
+              </div>
+              <h3 class="mb-1 font-heading text-base font-semibold text-textBrown">Enjoy</h3>
+              <p class="text-textBrown/85">
+                Pick up your order or opt for delivery within Ambur area. Then it&apos;s time to enjoy
+                your sweet treats!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Footer -->
+      <section id="contact" class="bg-creamSoft pt-14 pb-10 sm:pt-16" aria-labelledby="contact-title">
+        <div class="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+          <div
+            class="mb-8 flex flex-col gap-8 rounded-3xl bg-cream p-6 shadow-soft sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div class="max-w-xl">
+              <h2
+                id="contact-title"
+                class="mb-2 font-heading text-2xl font-semibold tracking-tight text-textBrown sm:text-3xl"
+              >
+                Ready to Place an Order?
+              </h2>
+              <p class="mb-4 text-sm text-textBrown/85 sm:text-base">
+                Send us a WhatsApp message with your occasion, date, and ideas. We&apos;ll help you
+                create the perfect dessert for your celebration.
+              </p>
+              <div class="space-y-1 text-sm text-textBrown/85">
+                <p><span class="font-medium text-textBrown">WhatsApp / Call:</span> +91 63810 91583</p>
+                <p><span class="font-medium text-textBrown">Location:</span> Ambur &amp; nearby areas</p>
+                <p><span class="font-medium text-textBrown">Instagram:</span>
+                  <a
+                    href="https://www.instagram.com/cinnamonswirls.ambur"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-cinnamonDark underline-offset-4 hover:underline"
+                  >
+                    @cinnamonswirls.ambur
+                  </a>
+                </p>
+                <p><span class="font-medium text-textBrown">Hours:</span> Order in advance for best availability</p>
+              </div>
+            </div>
+
+            <!-- Contact Actions -->
+            <div class="w-full max-w-sm space-y-3 text-sm">
+              <a
+                href="https://wa.me/916381091583?text=Hi%21%20I%27d%20like%20to%20order%20from%20Cinnamon%20Swirls"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex w-full items-center justify-center rounded-full bg-cinnamon px-6 py-3 text-sm font-medium text-white shadow-soft transition hover:bg-cinnamonDark focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+              >
+                Order on WhatsApp
+              </a>
+              <a
+                href="tel:+916381091583"
+                class="flex w-full items-center justify-center rounded-full border border-caramel/50 bg-creamSoft px-6 py-3 text-sm font-medium text-textBrown shadow-sm transition hover:bg-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark md:hidden"
+              >
+                Call Us
+              </a>
+
+              <!-- Simple contact form (optional) -->
+              <form
+                class="mt-4 space-y-3 text-xs"
+                aria-label="Contact form (optional, WhatsApp preferred)"
+                onsubmit="event.preventDefault();"
+              >
+                <p class="text-textBrown/70">
+                  Prefer a quick note? Fill this in and copy your message into WhatsApp to send.
+                </p>
+                <div>
+                  <label for="name" class="mb-1 block text-[11px] font-medium text-textBrown/80">
+                    Name
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    class="w-full rounded-lg border border-caramel/30 bg-cream px-3 py-2 text-xs text-textBrown placeholder:text-textBrown/40 focus:border-cinnamon focus:outline-none focus:ring-1 focus:ring-cinnamon"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label for="phone" class="mb-1 block text-[11px] font-medium text-textBrown/80">
+                    Phone / WhatsApp
+                  </label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    class="w-full rounded-lg border border-caramel/30 bg-cream px-3 py-2 text-xs text-textBrown placeholder:text-textBrown/40 focus:border-cinnamon focus:outline-none focus:ring-1 focus:ring-cinnamon"
+                    placeholder="+91 ..."
+                  />
+                </div>
+                <div>
+                  <label for="message" class="mb-1 block text-[11px] font-medium text-textBrown/80">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    rows="3"
+                    class="w-full rounded-lg border border-caramel/30 bg-cream px-3 py-2 text-xs text-textBrown placeholder:text-textBrown/40 focus:border-cinnamon focus:outline-none focus:ring-1 focus:ring-cinnamon"
+                    placeholder="Share your occasion, date, and order details..."
+                  ></textarea>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="mt-4 flex flex-col items-center justify-between gap-3 border-t border-caramel/10 pt-4 text-xs text-textBrown/70 sm:flex-row">
+            <p>© 2026 Cinnamon Swirls. All rights reserved.</p>
+            <p>
+              Made with love in Ambur &mdash; focused on handcrafted quality and beautiful presentation.
+            </p>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <!-- Main JavaScript -->
+    <script src="./script.js" defer></script>
+  </body>
+</html>
+

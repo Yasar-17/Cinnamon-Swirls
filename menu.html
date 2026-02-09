@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cinnamon Swirls | Dessert Menu</title>
+    <meta
+      name="description"
+      content="Explore the full dessert menu at Cinnamon Swirls in Ambur – bombolonis, brownies, cinnamon rolls, cupcakes, cookies, cakes, dessert cups and more."
+    />
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cinnamon: '#C96A2C',
+              cinnamonDark: '#8A4420',
+              caramel: '#E1A452',
+              cream: '#FBE1AF',
+              creamSoft: '#F6CF8E',
+              accentPink: '#F6B7B2',
+              accentPinkLight: '#FBD0CB',
+              textBrown: '#5E3A1A',
+            },
+            fontFamily: {
+              heading: ['"Playfair Display"', 'serif'],
+              body: ['Poppins', 'system-ui', 'sans-serif'],
+            },
+            boxShadow: {
+              soft: '0 10px 30px rgba(0, 0, 0, 0.08)',
+            },
+          },
+        },
+      };
+    </script>
+
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+
+  <body class="bg-cream text-textBrown font-body antialiased">
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/916381091583?text=Hi%21%20I%27d%20like%20to%20order%20from%20Cinnamon%20Swirls"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-40 inline-flex items-center justify-center rounded-full bg-cinnamon text-white shadow-soft px-5 py-3 md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+      aria-label="Order on WhatsApp"
+    >
+      <span class="mr-2 text-lg">WhatsApp</span>
+      <span class="text-xl">🧁</span>
+    </a>
+
+
+    <!-- Header / Navigation -->
+    <header
+      class="sticky top-0 z-30 border-b border-caramel/10 bg-cream/90 backdrop-blur"
+      aria-label="Main navigation"
+    >
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 lg:px-8"><!-- Logo -->
+        <a href="index.html#home" class="flex items-center gap-3">
+          <img
+            src="Images/Logo.jpg"
+            alt="Cinnamon Swirls Logo"
+            class="h-10 w-10 rounded-full object-cover shadow-soft"
+          />
+          <div class="flex flex-col">
+            <span class="font-heading text-lg font-semibold tracking-wide">Cinnamon Swirls</span>
+            <span class="text-xs text-cinnamonDark">Ambur &amp; nearby areas</span>
+          </div>
+        </a>
+
+
+        <!-- Desktop Nav -->
+        <nav class="hidden items-center gap-8 text-sm md:flex" aria-label="Primary">
+          <a href="index.html#home" class="transition-colors hover:text-cinnamonDark">Home</a>
+          <a href="index.html#about" class="transition-colors hover:text-cinnamonDark">About</a>
+          <a href="menu.html" aria-current="page" class="font-medium text-cinnamonDark">
+            Menu
+          </a>
+          <a href="index.html#gallery" class="transition-colors hover:text-cinnamonDark">Gallery</a>
+          <a href="index.html#contact" class="transition-colors hover:text-cinnamonDark">Contact</a>
+
+
+          <a
+            href="https://wa.me/916381091583?text=Hi%21%20I%27d%20like%20to%20order%20from%20Cinnamon%20Swirls"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center rounded-full bg-accentPink px-4 py-2 text-sm font-medium text-textBrown shadow-soft transition hover:bg-accentPinkLight focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+          >
+            Order on WhatsApp
+          </a>
+        </nav>
+
+
+        <!-- Mobile Nav Toggle -->
+        <button
+          id="nav-toggle"
+          class="inline-flex items-center justify-center rounded-full border border-caramel/30 bg-cream px-3 py-2 text-sm text-textBrown shadow-sm transition hover:bg-creamSoft focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark md:hidden"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <svg
+            id="nav-icon-open"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+          <svg
+            id="nav-icon-close"
+            xmlns="http://www.w3.org/2000/svg"
+            class="hidden h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+
+      <!-- Mobile Nav -->
+      <nav
+        id="mobile-nav"
+        class="hidden border-t border-caramel/10 bg-creamSoft md:hidden"
+        aria-label="Mobile primary"
+      >
+        <div class="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 text-sm">
+          <a href="index.html#home" class="rounded-md px-2 py-2 transition hover:bg-cream">Home</a>
+          <a href="index.html#about" class="rounded-md px-2 py-2 transition hover:bg-cream">About</a>
+          <a href="menu.html" class="rounded-md px-2 py-2 font-medium text-cinnamonDark">
+            Menu
+          </a>
+          <a href="index.html#gallery" class="rounded-md px-2 py-2 transition hover:bg-cream">
+            Gallery
+          </a>
+          <a href="index.html#contact" class="rounded-md px-2 py-2 transition hover:bg-cream">
+            Contact
+          </a>
+          <a
+            href="https://wa.me/916381091583?text=Hi%21%20I%27d%20like%20to%20order%20from%20Cinnamon%20Swirls"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-1 inline-flex items-center justify-center rounded-full bg-accentPink px-4 py-2 text-sm font-medium text-textBrown shadow-soft transition hover:bg-accentPinkLight"
+          >
+            Order on WhatsApp
+          </a>
+        </div>
+      </nav>
+    </header>
+
+
+    <main>
+      <!-- Page Hero -->
+      <section class="bg-creamSoft py-12 sm:py-14" aria-labelledby="menu-hero-title">
+        <div class="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+          <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div class="max-w-xl">
+              <p class="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-cinnamonDark">
+                Dessert Menu
+              </p>
+              <h1
+                id="menu-hero-title"
+                class="mb-3 font-heading text-3xl font-semibold tracking-tight text-textBrown sm:text-4xl"
+              >
+                Explore Our Full Dessert Menu
+              </h1>
+              <p class="text-sm text-textBrown/80 sm:text-base">
+                Every item on this menu is freshly prepared to order. Choose your favourites and send us a
+                WhatsApp message with your selections, date, and quantity.
+              </p>
+            </div>
+            <div class="flex flex-col items-start gap-3 text-sm">
+              <a
+                href="https://wa.me/916381091583?text=Hi%21%20I%27d%20like%20to%20order%20from%20Cinnamon%20Swirls"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center rounded-full bg-cinnamon px-6 py-3 text-sm font-medium text-white shadow-soft transition hover:bg-cinnamonDark focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+              >
+                Order on WhatsApp
+              </a>
+              <span class="text-xs text-textBrown/70">
+                Tip: Screenshot this menu and share it with your order message.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Menu Grid (text + images inspired by the provided designs) -->
+      <section class="bg-cream py-10 sm:py-12" aria-label="Dessert categories">
+        <div class="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 space-y-10">
+          <!-- Row 1: Bombolonis / Brownies / Cinnamon Rolls -->
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-[1.3fr_1.1fr]">
+            <article class="rounded-3xl bg-creamSoft p-6 shadow-soft">
+              <div class="mb-3 flex items-baseline justify-between gap-3">
+                <h2 class="font-heading text-2xl font-semibold text-textBrown">Bombolonis</h2>
+                <span class="text-xs uppercase tracking-[0.18em] text-cinnamonDark">Filled Doughnuts</span>
+              </div>
+              <ul class="mb-4 grid gap-1 text-sm text-textBrown/90 sm:grid-cols-2">
+                <li>Chocolate</li>
+                <li>Cookies &amp; Cream</li>
+                <li>Chocolate Mousse</li>
+                <li>Choco Hazelnut</li>
+                <li>Biscoff</li>
+              </ul>
+              <p class="text-xs text-textBrown/70">
+                Soft, sugar-dusted bombolonis generously filled with your favourite flavours.
+              </p>
+            </article>
+
+
+            <article class="rounded-3xl bg-creamSoft p-6 shadow-soft">
+              <div class="mb-3 flex items-baseline justify-between gap-3">
+                <h2 class="font-heading text-2xl font-semibold text-textBrown">Brownies</h2>
+                <span class="text-xs uppercase tracking-[0.18em] text-cinnamonDark">Fudgy Classics</span>
+              </div>
+              <ul class="mb-4 grid gap-1 text-sm text-textBrown/90 sm:grid-cols-2">
+                <li>Classic Brownie</li>
+                <li>Nutella</li>
+                <li>Biscoff</li>
+                <li>Brownie Tub</li>
+              </ul>
+              <p class="text-xs text-textBrown/70">
+                Rich, chocolatey brownies &amp; tubs that are perfect for sharing or indulging solo.
+              </p>
+            </article>
+          </div>
+
+
+          <div class="grid gap-6 md:grid-cols-[1.1fr_1.3fr]">
+            <article class="rounded-3xl bg-creamSoft p-6 shadow-soft">
+              <div class="mb-3 flex items-baseline justify-between gap-3">
+                <h2 class="font-heading text-2xl font-semibold text-textBrown">Cinnamon Rolls</h2>
+                <span class="text-xs uppercase tracking-[0.18em] text-cinnamonDark">Freshly Baked</span>
+              </div>
+              <ul class="mb-4 grid gap-1 text-sm text-textBrown/90 sm:grid-cols-2">
+                <li>Classic Cinnamon Rolls</li>
+                <li>Cinnamon Cocoa</li>
+                <li>Double Chocolate</li>
+              </ul>
+              <p class="text-xs text-textBrown/70">
+                Soft, buttery rolls swirled with cinnamon, finished with luscious glazes.
+              </p>
+            </article>
+
+
+            <!-- Decorative image slot for menu design 1 -->
+            <article class="rounded-3xl bg-creamSoft p-6 shadow-soft flex items-center">
+              <img
+                src="Images/MenuImage1.jpeg"
+                alt="Dessert display featuring cake from Cinnamon Swirls"
+                class="h-48 w-full rounded-2xl object-cover"
+                loading="lazy"
+              />
+            </article>
+          </div>
+
+
+          <!-- Row 2: Dessert Cups / Cakes / Bomboloni Tub -->
+          <div class="grid gap-6 md:grid-cols-[1.4fr_1.2fr]">
+            <article class="rounded-3xl bg-creamSoft p-6 shadow-soft">
+              <div class="mb-6 grid gap-6 md:grid-cols-2">
+                <div>
+                  <h2 class="mb-2 font-heading text-2xl font-semibold text-textBrown">
+                    Dessert Cups
+                  </h2>
+                  <ul class="grid gap-1 text-sm text-textBrown/90">
+                    <li>Chocolate Mousse</li>
+                    <li>Red Velvet Cheesecake</li>
+                    <li>Chocolate Mocha</li>
+                    <li>Cookies &amp; Cream</li>
+                    <li>Tiramisu</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="mb-2 font-heading text-xl font-semibold text-textBrown">Cakes</h3>
+                  <ul class="grid gap-1 text-sm text-textBrown/90">
+                    <li>Chocolate Mousse</li>
+                    <li>Chocolate Truffle</li>
+                    <li>Vanilla</li>
+                    <li>Red Velvet</li>
+                  </ul>
+                </div>
+              </div>
+
+
+              <div class="border-t border-caramel/20 pt-4">
+                <h3 class="mb-2 font-heading text-xl font-semibold text-textBrown">Bomboloni Tub</h3>
+                <ul class="grid gap-1 text-sm text-textBrown/90 sm:grid-cols-2">
+                  <li>Chocolate Filled</li>
+                  <li>Nutella Filled</li>
+                  <li>Assorted</li>
+                </ul>
+              </div>
+            </article>
+
+
+            <!-- Decorative image slot for menu design 2 -->
+            <article class="rounded-3xl bg-creamSoft p-6 shadow-soft flex items-center">
+              <img
+                src="Images/MenuImage2.jpeg"
+                alt="Selection of brownies from Cinnamon Swirls"
+                class="h-64 w-full rounded-2xl object-cover"
+                loading="lazy"
+              />
+            </article>
+          </div>
+
+
+            <article class="rounded-3xl bg-creamSoft p-6 shadow-soft">
+              <div class="grid gap-6 md:grid-cols-2">
+                <div>
+                  <h2 class="mb-2 font-heading text-2xl font-semibold text-textBrown">Cupcakes</h2>
+                  <ul class="grid gap-1 text-sm text-textBrown/90">
+                    <li>Chocolate Mousse</li>
+                    <li>Chocolate Truffle</li>
+                    <li>Cookies &amp; Cream</li>
+                    <li>Vanilla Mousse</li>
+                    <li>Red Velvet</li>
+                    <li>Biscoff</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="mb-2 font-heading text-xl font-semibold text-textBrown">Cookies</h3>
+                  <ul class="grid gap-1 text-sm text-textBrown/90">
+                    <li>Chocolate Chip Cookies</li>
+                    <li>Double Chocolate Chips</li>
+                    <li>Nutella filled Chocolate Chips</li>
+                    <li>Cookie tub</li>
+                  </ul>
+                </div>
+              </div>
+
+
+              <div class="mt-6 border-t border-caramel/20 pt-4">
+                <h3 class="mb-2 font-heading text-xl font-semibold text-textBrown">Brownie Slab</h3>
+                <ul class="grid gap-1 text-sm text-textBrown/90 sm:grid-cols-2">
+                  <li>Classic Brownie Slab</li>
+                  <li>Nutella Brownie Slab</li>
+                </ul>
+              </div>
+            </article>
+
+
+          <!-- Ordering reminder -->
+          <div class="rounded-3xl bg-creamSoft p-5 text-sm shadow-soft">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p class="max-w-3xl text-textBrown/85">
+                For current pricing, sizes, and availability, please message us on WhatsApp with the
+                items you&apos;d like, your date, and the number of people. We&apos;ll confirm everything and
+                suggest the best options for your celebration.
+              </p>
+              <a
+                href="https://wa.me/916381091583?text=Hi%21%20I%27d%20like%20to%20order%20from%20Cinnamon%20Swirls%20after%20seeing%20the%20menu%20page."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center rounded-full bg-cinnamon px-5 py-2 text-xs font-medium text-white shadow-soft transition hover:bg-cinnamonDark focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cinnamonDark"
+              >
+                Start WhatsApp Order
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- Reuse same JS for nav toggle -->
+    <script src="./script.js" defer></script>
+  </body>
+</html>
