@@ -76,18 +76,22 @@
       aria-label="Main navigation"
     >
       <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 lg:px-8"><!-- Logo -->
-        <a href="index.html#home" class="flex items-center gap-3">
-          <img
-            src="Images/Logo.jpg"
-            alt="Cinnamon Swirls Logo"
-            class="h-10 w-10 rounded-full object-cover shadow-soft"
-          />
-          <div class="flex flex-col">
-            <span class="font-heading text-lg font-semibold tracking-wide">Cinnamon Swirls</span>
-            <span class="text-xs text-cinnamonDark">Ambur &amp; nearby areas</span>
-          </div>
-        </a>
-
+       <a href="#home" class="flex items-center gap-3">
+  <div class="h-16 w-16 overflow-hidden rounded-full bg-caramel shadow-soft flex-shrink-0">
+    <img
+      src="Images/Logo-full.png"
+      alt="Cinnamon Swirls logo"
+      class="h-full w-full object-cover scale-110"
+      style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; transform-origin: center;"
+      width="64"
+      height="64"
+    />
+  </div>
+  <div class="flex flex-col">
+    <span class="font-heading text-lg font-semibold tracking-wide">Cinnamon Swirls</span>
+    <span class="text-xs text-cinnamonDark">Ambur &amp; nearby areas</span>
+  </div>
+</a>
 
         <!-- Desktop Nav -->
         <nav class="hidden items-center gap-8 text-sm md:flex" aria-label="Primary">
